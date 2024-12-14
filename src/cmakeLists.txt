@@ -3,9 +3,6 @@
 # Enable/disable building a library
 option(BUILD_LIBRARY "Enable building of the library target" OFF)
 
-# Variable for the library name
-set(LIB_NAME "${PROJECT_NAME}Lib")
-
 # Collect source files for the library
 # It's a good practice not to use file(GLOB ...) for production builds, 
 # but explicitly list files.
