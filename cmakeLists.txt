@@ -32,9 +32,10 @@ option(BUILD_TESTS "Build unit tests" ON)
 option(BUILD_DOCS "Build documentation" OFF)
 
 # Include third-party dependencies
-# If you have third-party dependencies that require custom find modules,
-# you can add them here.
-# Example: find_package(SomeLibrary REQUIRED)
+# Include QT6
+set(CMAKE_PREFIX_PATH "C:/Qt/6.8.1/msvc2022_64")
+find_package(Qt6 COMPONENTS Widgets REQUIRED)
+
 
 # Add the main library or executable sources from src/
 add_subdirectory(src)
