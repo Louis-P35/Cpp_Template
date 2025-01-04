@@ -9,10 +9,10 @@ MainWindow::MainWindow(QWidget* pParent) : QMainWindow(pParent)
 {
 	setWindowTitle("Qt6 Template Application");
 
-    // Example menubar
+    // Menubar
     QMenu* fileMenu = menuBar()->addMenu("File");
     fileMenu->addAction("Exit", this, &QMainWindow::close);
 
-    // Example statusbar
+    // Statusbar
     statusBar()->showMessage("Ready");
 }
