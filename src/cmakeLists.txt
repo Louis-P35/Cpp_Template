@@ -12,6 +12,10 @@ set(SRC_FILES
     mainWindow.cpp
 )
 
+set(HEADER_FILES
+    ${CMAKE_SOURCE_DIR}/include/mainWindow.hpp
+)
+
 # Enable AUTOMOC (and optionally AUTOUIC, AUTORCC) 
 # so CMake automatically calls moc on classes with Q_OBJECT:
 set(CMAKE_AUTOMOC ON)
@@ -22,14 +26,14 @@ set(CMAKE_AUTORCC ON)
 if (${BUILD_LIBRARY})
     # Create a library target from these sources
     # Can choose STATIC, SHARED, or INTERFACE depending on needs.
-    add_library(${LIB_NAME} STATIC ${SRC_FILES})
+    add_library(${LIB_NAME} STATIC ${SRC_FILES} ${HEADER_FILES})
 
     # Ensure the library has access to the public headers
     target_include_directories(${LIB_NAME} PUBLIC ${CMAKE_SOURCE_DIR}/include)
 endif()
 
 # Generate executable file
-add_executable(${PROJECT_NAME} ${SRC_FILES})
+add_executable(${PROJECT_NAME} ${SRC_FILES} ${HEADER_FILES})
 
 # Link external dependencies
 target_link_libraries(${PROJECT_NAME} PRIVATE Qt6::Widgets)
