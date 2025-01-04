@@ -9,7 +9,14 @@ option(BUILD_LIBRARY "Enable building of the library target" OFF)
 set(SRC_FILES
     main.cpp
     StringUtils.cpp
+    mainWindow.cpp
 )
+
+# Enable AUTOMOC (and optionally AUTOUIC, AUTORCC) 
+# so CMake automatically calls moc on classes with Q_OBJECT:
+set(CMAKE_AUTOMOC ON)
+set(CMAKE_AUTOUIC ON)
+set(CMAKE_AUTORCC ON)
 
 
 if (${BUILD_LIBRARY})

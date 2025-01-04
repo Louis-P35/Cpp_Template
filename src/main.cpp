@@ -1,12 +1,18 @@
-#include <iostream>
+// Includes from project
 #include "main.hpp"
 #include "StringUtils.hpp"
+#include "mainWindow.hpp"
 
+// Includes from 3rd party
+#include <QApplication>
+
+// Includes from STL
+#include <iostream>
 #include <vector>
 #include <string>
 #include <tuple>
 
-int main(int argc, char** argv)
+void test()
 {
     // Tests unitaires (vector de tuple de string)
     std::vector<std::tuple<std::string, std::string, bool>> unitTests = {
@@ -44,7 +50,14 @@ int main(int argc, char** argv)
     {
         std::cout << "All tests succeed!" << std::endl;
     }
-    
-    std::cout << "Hello, World!" << std::endl;
-    return 0;
+}
+
+int main(int argc, char** argv)
+{
+    //test();
+
+    QApplication app(argc, argv);
+    MainWindow window;
+    window.show();
+    return app.exec();
 }
