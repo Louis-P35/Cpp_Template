@@ -45,3 +45,7 @@ docs/doxygen/latex/
 *.tar.gz
 *.zip
 *.7z
+
+.vs/
+bin/
+out/
