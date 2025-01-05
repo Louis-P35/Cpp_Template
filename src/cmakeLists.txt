@@ -1,5 +1,8 @@
 # src/CMakeLists.txt
 
+# Include the DeployQt.cmake file
+include("${CMAKE_SOURCE_DIR}/cmake/DeployQt.cmake")
+
 # Enable/disable building a library
 option(BUILD_LIBRARY "Enable building of the library target" OFF)
 
@@ -40,6 +43,9 @@ target_link_libraries(${PROJECT_NAME} PRIVATE Qt6::Widgets)
 
 # Add include directory
 target_include_directories(${PROJECT_NAME} PRIVATE ${CMAKE_SOURCE_DIR}/include)
+
+# Deploy Qt for the executable
+deploy_qt_for(${PROJECT_NAME})
 
 
 # Set compile options, features, or properties:
